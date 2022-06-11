@@ -129,6 +129,8 @@ def preprocess_string(doc_string):
 def find_results(query, index, host):
 
     docs = []
+
+    
     for term in query:
         # get all results for index
         if term in index:
@@ -136,6 +138,9 @@ def find_results(query, index, host):
         
             # result found if term in index
             docs.append(list(res))
+         
+        else:
+            return []
 
     # if hostname is specified
     if host != False:
