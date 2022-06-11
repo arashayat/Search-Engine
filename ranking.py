@@ -68,8 +68,6 @@ def result():
     body_results = find_results(query, body_index, host)
     all_results = list(set(body_results + title_results))
 
-    if len(all_results) == 0:
-        return render_template('results.html', data = [0, 0])
 
 
     s_phrase_title = {doc:1 for doc in all_results}
